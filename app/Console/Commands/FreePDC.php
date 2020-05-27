@@ -55,11 +55,13 @@ class FreePDC extends Command
                     $data['number'] = ($user->free_count == 2) ? 'второй' : 'третий';
                     $data['date'] = date('d.m.Y');
 
-                    if ($user->free_count == 3) {
+                    Esputnik::sendEmail(2188363, $data, 2);
+
+                    /*if ($user->free_count == 3) {
                         Esputnik::sendEmail(2193601, $data, 2); // письмо с оплатой
                     } else {
                         Esputnik::sendEmail(2188363, $data, 2);
-                    }
+                    }*/
                 }
             }
         });

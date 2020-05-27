@@ -63,10 +63,12 @@ class Esputnik
             case 2:
                 // Отправление ПДС
                 $pdc = $data['pdc'];
+                $number = $data['number'];
+                $date = $data['date'];
                 $json_value->recipients = [
                     [
                         'email' => $data['email'],
-                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name}"
+                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name, 'number': $number, 'date': $date}"
                     ]
                 ];
                 break;
