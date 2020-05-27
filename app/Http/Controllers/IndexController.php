@@ -45,6 +45,8 @@ class IndexController extends BaseController
             $data['name'] = $user->name;
             $data['email'] = $user->email;
             $data['pdc'] = $pdc;
+            $data['number'] = 'первый';
+            $data['date'] = date('d.m.Y');
             Esputnik::sendEmail(2188363, $data, 2);
             $message = 'Вы успешно подтвердили свой адрес электронной почты.';
         } else {

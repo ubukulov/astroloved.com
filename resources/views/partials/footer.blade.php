@@ -15,7 +15,8 @@
                 <div class="cont">
                     <img class="footer-logo" src="/img/log.png" alt="Astroloded"> <br>
                     <a href="#"><img width="20px" src="/img/whats.png" alt=""></a>
-                    <a href="#"><img width="20px" src="/img/inst.png" alt=""></a> <br><br>
+                    <a href="#"><img width="20px" src="/img/inst.png" alt=""></a> <br>
+                    <a href="mailto:admin@astroloved.com">admin@astroloved.com</a> <br><br>
                     <button type="button" class="buttons-footers rounded-pill roz" data-toggle="modal" data-target="#subscribeModal">Получать астропрогнозы</button> <br>
                     <button type="button" class="buttons-footers rounded-pill" data-toggle="modal" data-target="#consultationModal">Консультация астролога</button>
                 </div>
@@ -25,7 +26,7 @@
             <div class="col">
                 <span>© 2020г. Все права защищены</span> <br>
                 <p style="margin-bottom:0px;"><a class="pol" href="/Политика конфиденциальности.pdf"  target="_blank">Политика конфедициальности</a></p>
-                <p><a class="pol" href="/Договор публичной оферты.pdf" target="_blank">Договор публичной оферты</a></p>
+                <p style="margin-bottom:0px;"><a class="pol" href="/Договор публичной оферты.pdf" target="_blank">Договор публичной оферты</a></p>
             </div>
         </div>
     </div>

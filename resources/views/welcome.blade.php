@@ -8,7 +8,7 @@
         <p></p>
         <div class="main-header-buttons">
             <button type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill">Хочу Получать прогнозы</button>
-            <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Консултация астролога</button>
+            <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Консультация астролога</button>
         </div>
     </div>
 @stop
@@ -64,7 +64,7 @@
             <div class="row text-center">
                 <div class="col">
                     <button type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill">Хочу Получать прогнозы</button>
-                    <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Консултация астролога</button>
+                    <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Консультация астролога</button>
                 </div>
             </div>
         </div>

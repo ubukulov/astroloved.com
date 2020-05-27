@@ -41,7 +41,7 @@ class FreePDC extends Command
     {
         User::chunk(10, function($users) {
             foreach($users as $user) {
-                if($user->free_count < 3) {
+                if($user->free_count < 3 && !empty($user->email_verified_at)) {
                     $pdc_Number = Esputnik::getPDCNumber($user->birth_date);
                     $pdc = Esputnik::value_lists($pdc_Number);
                     $data = [];
@@ -51,6 +51,10 @@ class FreePDC extends Command
                     $data['buy_link'] = route('buy.subscription');
                     $user->free_count++;
                     $user->save();
+
+                    $data['number'] = ($user->free_count == 2) ? 'второй' : 'третий';
+                    $data['date'] = date('d.m.Y');
+
                     if ($user->free_count == 3) {
                         Esputnik::sendEmail(2193601, $data, 2); // письмо с оплатой
                     } else {

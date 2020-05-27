@@ -1,11 +1,9 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/core.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 
 <script src="/js/datepicker_ru.js"></script>
 <script src="/js/my_scripts.js"></script>
-<script src="/js/script.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/fontawesome-free-5.13.0-web/js/all.js"></script>
 
@@ -103,7 +101,7 @@
             flex-grow: 0 !important;
         }
         .navbar-expand-lg {
-            justify-content: center !important;
+            justify-content: space-between !important;
         }
 
     </style>
