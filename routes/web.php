@@ -14,6 +14,7 @@
 Route::get('/', 'IndexController@welcome')->name('home');
 Route::post('/subscribe/user', 'IndexController@subscribe');
 Route::get('users/{user}/{token}/confirm', 'IndexController@confirm')->name('confirm.email');
+Route::get('/confirmation-email', 'IndexController@confirmation')->name('confirmation');
 Route::get('/buy-subscription', 'PaymentController@buy_subscription')->name('buy.subscription');
 Route::post('/buy-subscription', 'PaymentController@buy')->name('buy');
 Route::get('/buy-subscription-success', 'PaymentController@buy_success');

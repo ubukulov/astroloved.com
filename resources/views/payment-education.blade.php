@@ -27,10 +27,6 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="text" id="birth_date" value placeholder="День рождения" class="form-control">
-                    </div>
-
-                    <div class="form-group">
                         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col-md-9 p-4 d-flex flex-column position-static education">
                                 <h3 class="mb-0">Курс №1. Определение психотипов личности по дате рождения человека</h3>

@@ -53,6 +53,11 @@ class IndexController extends BaseController
             $message = 'Ваш адрес электронной почты уже подтвержден или неверный токен подтверждения.';
         }
 
-        return redirect()->route('home')->withMessage($message);
+        return redirect()->route('confirmation')->withMessage($message);
+    }
+
+    public function confirmation()
+    {
+        return view('confirmation');
     }
 }

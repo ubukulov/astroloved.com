@@ -101,7 +101,7 @@
             flex-grow: 0 !important;
         }
         .navbar-expand-lg {
-            justify-content: space-between !important;
+            justify-content: space-evenly !important;
         }
 
     </style>
