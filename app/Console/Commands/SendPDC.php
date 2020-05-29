@@ -50,7 +50,7 @@ class SendPDC extends Command
             $data['email'] = $user->email;
             $data['pdc'] = $pdc;
 
-            Esputnik::sendEmail(2188363, $data, 2);
+            Esputnik::sendEmail(2221563, $data, 3);
 
             // TODO : реализовать отправку последное письмо с ссылкой на оплаты
 //            if ($user->free_count == 3) {

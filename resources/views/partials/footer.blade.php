@@ -18,7 +18,7 @@
                     <a href="#"><img width="20px" src="/img/inst.png" alt=""></a> <br>
                     <a href="mailto:admin@astroloved.com">admin@astroloved.com</a> <br><br>
                     <button type="button" class="buttons-footers rounded-pill roz" data-toggle="modal" data-target="#subscribeModal">Получать астропрогнозы</button> <br>
-                    <button type="button" class="buttons-footers rounded-pill" data-toggle="modal" data-target="#consultationModal">Консультация астролога</button>
+                    <button type="button" class="buttons-footers rounded-pill" onclick='window.location="{{ route('show.consultation') }}"'>Консультация астролога</button>
                 </div>
             </div>
         </div>

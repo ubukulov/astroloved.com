@@ -8,7 +8,7 @@
         <p></p>
         <div class="main-header-buttons">
             <button type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill">Хочу Получать прогнозы</button>
-            <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Консультация астролога</button>
+            <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
         </div>
     </div>
 @stop
@@ -64,7 +64,7 @@
             <div class="row text-center">
                 <div class="col">
                     <button type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill">Хочу Получать прогнозы</button>
-                    <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Консультация астролога</button>
+                    <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
                 </div>
             </div>
         </div>
@@ -84,8 +84,8 @@
                                 <h5>Практикующий астролог</h5>
                                 <p>"Жизнь каждого человека может быть более предсказуема, понятна и управляема, если знать, что его ожидает завтра. Расчёт Персонального Дня Силы на каждый день как раз и даёт это понимание и позволяет быть более эффективным каждый день."</p>
                                 <div class="knopp">
-                                    <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn rounded-pill fiol">Заказать консультацию</button>
-                                    <button type="button" data-toggle="modal" data-target="#educationModal" class="btn rounded-pill gold">Пройти обучение</button>
+                                    <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn rounded-pill fiol">Заказать консультацию</button>
+                                    <button type="button" onclick='window.location="{{ route('show.course') }}"' class="btn rounded-pill gold">Пройти обучение</button>
                                 </div>
                             </div>
                         </div>
@@ -145,7 +145,7 @@
                 <div class="row text-center">
                     <div class="col">
                         <h3>сам себе астролог!</h3>
-                        <button type="button" data-toggle="modal" data-target="#educationModal" class="btn rounded-pill">Пройти обучение у астролога</button>
+                        <button type="button" onclick='window.location="{{ route('show.course') }}"' class="btn rounded-pill">Пройти обучение у астролога</button>
                     </div>
                 </div>
             </div>

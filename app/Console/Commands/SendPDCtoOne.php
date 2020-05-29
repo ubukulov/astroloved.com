@@ -48,6 +48,6 @@ class SendPDCtoOne extends Command
         $data['email'] = $user->email;
         $data['pdc'] = $pdc;
 
-        Esputnik::sendEmail(2188363, $data, 2);
+        Esputnik::sendEmail(2221563, $data, 3);
     }
 }

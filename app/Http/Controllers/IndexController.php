@@ -58,6 +58,6 @@ class IndexController extends BaseController
 
     public function confirmation()
     {
-        return view('confirmation');
+        return view('email.confirmation');
     }
 }

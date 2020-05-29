@@ -61,14 +61,25 @@ class Esputnik
                 break;
 
             case 2:
-                // Отправление ПДС
+                // Отправление ПДС - бесплатные подписчикам
                 $pdc = $data['pdc'];
-                $number = $data['number'];
-                $date = $data['date'];
+                $number = (isset($data['number'])) ? $data['number'] : '';
+                $date = (isset($data['date'])) ? $data['date'] : '';
                 $json_value->recipients = [
                     [
                         'email' => $data['email'],
                         'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name, 'number': $number, 'date': $date}"
+                    ]
+                ];
+                break;
+
+            case 3:
+                // Отправление ПДС - оплаченные подписчики
+                $pdc = $data['pdc'];
+                $json_value->recipients = [
+                    [
+                        'email' => $data['email'],
+                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name}"
                     ]
                 ];
                 break;
@@ -102,7 +113,6 @@ class Esputnik
         $email = $user->email;	// email контакта
         $url = 'https://esputnik.com/api/v1/contacts';
 
-        $json_contact_value = new stdClass();
         $contact = new stdClass();
         $contact->firstName = $first_name;
         $contact->channels = array(

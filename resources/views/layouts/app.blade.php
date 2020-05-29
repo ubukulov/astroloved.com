@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/pay.css">
+    <link rel="stylesheet" href="/css/buy.css">
     <link rel="stylesheet" href="/fonts/fontss.css">
     <link rel="stylesheet" href="/fontawesome-free-5.13.0-web/css/all.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="x-icon">
