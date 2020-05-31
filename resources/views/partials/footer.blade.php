@@ -17,8 +17,8 @@
                     <a href="#"><img width="20px" src="/img/whats.png" alt=""></a>
                     <a href="#"><img width="20px" src="/img/inst.png" alt=""></a> <br>
                     <a href="mailto:admin@astroloved.com">admin@astroloved.com</a> <br><br>
-                    <button type="button" class="buttons-footers rounded-pill roz" data-toggle="modal" data-target="#subscribeModal">Получать астропрогнозы</button> <br>
-                    <button type="button" class="buttons-footers rounded-pill" onclick='window.location="{{ route('show.consultation') }}"'>Консультация астролога</button>
+                    <a href="#" id="footer_pa" class="buttons-footers rounded-pill roz">Получать астропрогнозы</a> <br>
+                    <a href="{{ route('show.consultation') }}" class="buttons-footers rounded-pill">Консультация астролога</a>
                 </div>
             </div>
         </div>
@@ -34,8 +34,8 @@
 
 <div id="topNubex">
     @if($agent->isMobile())
-        <img src="/img/arrow.png" width="35px" height="35px" />
+        <img src="/img/arrow.png" width="25px" height="25px" />
     @else
-        <img src="/img/arrow.png" width="45px" height="45px" />
+        <img src="/img/arrow.png" width="35px" height="35px" />
     @endif
 </div>

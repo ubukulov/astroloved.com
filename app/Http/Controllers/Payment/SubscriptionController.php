@@ -122,15 +122,19 @@ class SubscriptionController extends BaseController
             switch ($payment->tariff) {
                 case 'week':
                     $actived_at = $today->addWeek();
-                    $period = 'недели';
+                    $route_name = 'subs.week';
                     break;
                 case 'month':
                     $actived_at = $today->addMonth();
-                    $period = 'месяца';
+                    $route_name = 'subs.month';
                     break;
                 case 'year':
                     $actived_at = $today->addYear();
-                    $period = 'года';
+                    $route_name = 'subs.year';
+                    break;
+                default:
+                    $route_name = 'subs.week';
+                    $actived_at = $today->addWeek();
                     break;
             }
             $payment->update([
@@ -140,14 +144,28 @@ class SubscriptionController extends BaseController
             Artisan::call('send-pdc:one', [
                 'user' => $payment->user_id
             ]);
-        } else {
-            $period = 'месяца';
+
+            return redirect()->route($route_name);
         }
-        return view('subscription.payment-success', compact('period'));
     }
 
     public function buy_error()
     {
         dd("Ошибка при оплате");
+    }
+
+    public function week()
+    {
+        return view('subscription.payment-success-week');
+    }
+
+    public function month()
+    {
+        return view('subscription.payment-success-month');
+    }
+
+    public function year()
+    {
+        return view('subscription.payment-success-year');
     }
 }

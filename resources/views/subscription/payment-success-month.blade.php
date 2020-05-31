@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="ru">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,20 +20,12 @@
             <div class="col">
                 <h5>БЛАГОДАРИМ ВАС ЗА ОПЛАТУ!</h5>
                 <div class="textov">
-                    <p>На Ваш email мы отправили доступ к курсу. Успешного обучения!</p>
+                    <p>Теперь в течении месяца, ежедневно, Вы будете получать на свой email персональный астропрогноз, согласно ведической мудрости Джойтиш.</p>
                     <p><a href="{{ route('home') }}">Перейти в главную</a></p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/fontawesome-free-5.13.0-web/js/all.js"></script>
-
 </body>
-
 </html>

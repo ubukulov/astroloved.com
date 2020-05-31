@@ -1,6 +1,6 @@
 <!-- subscribeModal -->
 <div class="modal fade" id="subscribeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered subscribeModal" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 @if($agent->isMobile())
@@ -43,12 +43,12 @@
                     <input type="text" id="birth_date" placeholder="День рождения" class="form-control">
                 </div>
 
-                <div v-if="information" id="alert" class="alert alert-success fade show">
-                    @{{ information }}
+                <div v-if="information" v-html="information" id="alert" class="alert alert-success fade show">
+
                 </div>
             </div>
             <div class="modal-footer" style="padding-top: 0px;">
-                <button style="margin-top: 10px;" id="subscribe_btn" type="button" @click="subscribeUser()" class="btn btn-primary my_btn">Подписаться сейчас</button>
+                <button id="subscribe_btn" type="button" @click="subscribeUser()" class="btn btn-pink rounded-pill xpp_btn">Подписаться сейчас</button>
             </div>
         </div>
     </div>
@@ -103,7 +103,7 @@
                                     <li>25% скидка для подписчика астрологических прогнозов на месяц</li>
                                     <li>60% скидка для подписчика астрологических прогнозов на год</li>
                                 </ul>
-                                <button type="button" onclick="javascript:window.location = '/buy-consultation'" class="btn btn-lg btn-block btn-success my_btn">Заказать</button>
+                                <button type="button" @click="buyConsultation(1)" class="btn btn-violet rounded-pill zk_btn">Заказать</button>
                             </div>
                         </div>
                         <div class="card mb-4 shadow-sm">
@@ -117,7 +117,7 @@
                                     <li>25% скидка для подписчика астрологических прогнозов на месяц</li>
                                     <li>60% скидка для подписчика астрологических прогнозов на год</li>
                                 </ul>
-                                <button type="button" onclick="javascript:window.location = '/buy-consultation'" class="btn btn-lg btn-block btn-success my_btn">Заказать</button>
+                                <button type="button" @click="buyConsultation(2)" class="btn btn-violet rounded-pill zk_btn">Заказать</button>
                             </div>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
             </div>
 
             <div class="modal-footer" style="justify-content: flex-start">
-                <button id="subscribe_btn" onclick="javascript:window.location = '/buy-course'" type="button" class="btn btn-success my_btn">Приобрести сейчас</button>
+                <button id="subscribe_btn" @click="buyCourse()" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
             </div>
         </div>
     </div>

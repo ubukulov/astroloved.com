@@ -1,1 +1,138 @@
-section#b1{padding:30px 0 50px;}section#b1 .vidos{display:block;width:853px;max-width:100%;margin:20px auto}button.buy-cursov-gold{background-color:gold;color:#000}.buy-footer{font-size:12px;opacity:.6;position:relative;padding:20px 0 10px;background-color:#090312}.buy-footer a.buy-pol{font-size:12px;border-bottom:1px dashed;color:#fff;text-decoration:none}.buy-footer a.buy-pol:hover{color:#fff;text-decoration:none}
+section#b1 {
+  padding: 10px 0px 50px;
+  background: url(../img/fon-glav.jpg) center center no-repeat;
+  background-size: cover;
+}
+section#b1 .navbar .navbar-toggler {
+  color: #fff;
+  text-align: left;
+}
+section#b1 .navbar ul li a {
+  opacity: 0.7;
+  color: #fff;
+  font-size: 17px;
+}
+section#b1 .navbar ul li a::after {
+  content: '';
+  display: block;
+  width: 100%;
+  background-color: #fff;
+  height: 1px;
+  transform: scale(0);
+  transition: all 0.3s;
+}
+section#b1 .navbar ul li a:hover::after {
+  transform: scale(1);
+}
+section#b1 h4 {
+  margin-top: 20px;
+}
+section#b1 p {
+  font-size: 18px;
+}
+section#b1 p span {
+  text-transform: uppercase;
+  color: gold;
+}
+section#b1 .vidos {
+  display: block;
+  width: 853px;
+  max-width: 100%;
+  margin: 20px auto;
+}
+button.buy-cursov-gold {
+  background-color: #ffd700;
+  color: black;
+}
+button.buy-cursov-gold:hover {
+  background-color: rgba(255, 215, 0, 0.94);
+  color: black;
+}
+.buy-foot {
+  position: relative;
+  padding: 50px 0 10px;
+  background-color: #090312;
+}
+.buy-foot a {
+  color: #fff;
+  text-decoration: none;
+}
+.buy-foot a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.buy-foot a.pol {
+  border-bottom: 1px dashed;
+}
+.buy-foot .menushka {
+  text-align: left;
+}
+.buy-foot .menushka h5 {
+  margin-bottom: 20px;
+}
+.buy-foot .menushka p {
+  line-height: 12px;
+}
+.buy-foot .menushka p a {
+  opacity: 0.8;
+}
+.buy-foot .menushka p a:hover {
+  opacity: 0.9;
+  color: gold;
+}
+.buy-foot img.footer-logo {
+  margin-bottom: 10px;
+  width: 70px;
+}
+.buy-foot .cont {
+  position: absolute;
+  right: 0px;
+  display: block;
+  text-align: center;
+}
+.buy-foot .cont a {
+  padding: 2px;
+}
+.buy-foot .cont a.buttons-footers {
+  margin-bottom: -15px;
+  display: block;
+  background-color: #69328e;
+  padding: 10px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  -webkit-box-shadow: 5px 5px 44px -5px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 5px 5px 44px -5px rgba(0, 0, 0, 0.54);
+  box-shadow: 5px 5px 44px -5px rgba(0, 0, 0, 0.54);
+}
+.buy-foot .cont a.buttons-footers:hover {
+  background-color: #7e42a7;
+}
+.buy-foot .cont a.roz {
+  background-color: #f42267;
+}
+.buy-foot .cont a.roz:hover {
+  background-color: #fa427f;
+}
+.buy-foot .cont a.buy-cursov-gold {
+  background-color: #ffd700;
+  color: black;
+}
+.buy-foot .cont a.buy-cursov-gold:hover {
+  background-color: rgba(255, 215, 0, 0.94);
+  color: black;
+}
+.buy-foot .cooper {
+  opacity: 0.6;
+  padding: 20px;
+  font-size: 12px;
+}
+@media only screen and (max-width: 768px) {
+  .buy-foot .cont {
+    position: relative;
+    margin: 50px 0px;
+  }
+}
+/*# sourceMappingURL=buy.css.map */
