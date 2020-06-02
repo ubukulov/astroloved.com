@@ -24,7 +24,7 @@
                     <p>Проверьте, насколько точными и полезными окажутся для Вас эти прогнозы! Пробный период <span>3 ДНЯ БЕСПЛАТНО!</span></p>
                     <div class="vidos">
                         <video width="100%" height="480" autoplay preload="none" controls controlsList="nodownload">
-                            <source src="https://astroloved.s3.eu-central-1.amazonaws.com/astroloved.com/videos/pre_subs.mp4" type="video/mp4">
+                            <source src="https://astroloved.s3.eu-central-1.amazonaws.com/astroloved.com/videos/pres_subs.mp4" type="video/mp4">
                         </video>
                     </div>
                     <button id="besplat" type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill xpp_btn">Получать астропрогноз</button>
