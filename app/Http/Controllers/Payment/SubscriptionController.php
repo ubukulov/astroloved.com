@@ -10,12 +10,29 @@ use Illuminate\Http\Request;
 use Artisan;
 use Illuminate\Support\Str;
 use Esputnik;
+use Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class SubscriptionController extends BaseController
 {
-    public function buy_subscription()
+    public function buy_subscription(Request $request)
     {
-        return view('subscription.payment');
+        if ($request->exists('signature') && !empty($request->input('signature'))) {
+            $signature = $request->input('signature');
+            try {
+                $user_id = Crypt::decrypt($signature);
+                $user = User::find($user_id);
+                if ($user) {
+                    return view('subscription.payment', compact('user'));
+                } else {
+                    return view('subscription.payment-new');
+                }
+            } catch (DecryptException $decryptException) {
+                return view('subscription.payment-new');
+            }
+        } else {
+            return view('subscription.payment-new');
+        }
     }
 
     public function buy(Request $request)

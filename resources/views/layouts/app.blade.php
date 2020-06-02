@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/fontawesome-free-5.13.0-web/css/all.min.css">
     <link rel="shortcut icon" href="favicon.ico" type="x-icon">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    @csrf
     <title>ASTROLOVED</title>
 </head>
 

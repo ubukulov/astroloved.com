@@ -9,12 +9,29 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController;
 use Illuminate\Support\Str;
 use Artisan;
+use Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class ConsultationController extends BaseController
 {
-    public function show_consultation()
+    public function show_consultation(Request $request)
     {
-        return view('consultation.payment');
+        if ($request->exists('signature') && !empty($request->input('signature'))) {
+            $signature = $request->input('signature');
+            try {
+                $user_id = Crypt::decrypt($signature);
+                $user = User::find($user_id);
+                if ($user) {
+                    return view('consultation.payment', compact('user'));
+                } else {
+                    return view('consultation.payment-new');
+                }
+            } catch (DecryptException $decryptException) {
+                return view('consultation.payment-new');
+            }
+        } else {
+            return view('consultation.payment-new');
+        }
     }
 
     public function buy_consultation(Request $request)

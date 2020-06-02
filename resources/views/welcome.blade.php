@@ -7,7 +7,7 @@
         <h5>Проверьте, насколько точными и полезными окажутся для Вас, эти прогнозы, ведь <span>3 дня бесплатно!</span> Так же, Вы можете заказать личную консультацию астролога.</h5>
         <p></p>
         <div class="main-header-buttons">
-            <button type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill xpp_btn">Хочу Получать прогнозы</button>
+            <button type="button" onclick='window.location="{{ route('buy.subscription') }}"' class="btn btn-pink rounded-pill xpp_btn">Хочу Получать прогнозы</button>
             <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
         </div>
     </div>

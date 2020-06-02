@@ -82,6 +82,7 @@
             </div>
             <div class="modal-body">
                 <div class="container">
+                    @if(!isset($user))
                     <div class="form-group">
                         <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
                     </div>
@@ -89,6 +90,7 @@
                     <div class="form-group">
                         <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
                     </div>
+                    @endif
 
                     <div class="card-deck mb-3 text-center">
 
@@ -156,6 +158,7 @@
             <div class="modal-body">
                 <div class="container">
                     <div class="col-md-12">
+                        @if(!isset($user))
                         <div class="form-group">
                             <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
                         </div>
@@ -163,6 +166,7 @@
                         <div class="form-group">
                             <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
                         </div>
+                        @endif
 
                         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                             <div class="col-md-9 p-4 d-flex flex-column position-static">

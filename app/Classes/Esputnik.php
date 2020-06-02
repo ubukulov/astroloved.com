@@ -64,11 +64,13 @@ class Esputnik
                 // Отправление ПДС - бесплатные подписчикам
                 $pdc = $data['pdc'];
                 $number = (isset($data['number'])) ? $data['number'] : '';
-                $date = (isset($data['date'])) ? $data['date'] : '';
+                $buy_subscription_link = $data['buy_subscription_link'];
+                $buy_course_link = $data['buy_course_link'];
+                $buy_consultation_link = $data['buy_consultation_link'];
                 $json_value->recipients = [
                     [
                         'email' => $data['email'],
-                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name, 'number': $number, 'date': $date}"
+                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name, 'number': $number, 'buy_subscription_link': \"$buy_subscription_link\", 'buy_course_link': \"$buy_course_link\", 'buy_consultation_link': \"$buy_consultation_link\"}"
                     ]
                 ];
                 break;
@@ -76,10 +78,13 @@ class Esputnik
             case 3:
                 // Отправление ПДС - оплаченные подписчики
                 $pdc = $data['pdc'];
+                $buy_subscription_link = $data['buy_subscription_link'];
+                $buy_course_link = $data['buy_course_link'];
+                $buy_consultation_link = $data['buy_consultation_link'];
                 $json_value->recipients = [
                     [
                         'email' => $data['email'],
-                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name}"
+                        'jsonParam' => "{'pdc': \"$pdc\", 'firstname': $first_name, 'buy_subscription_link': \"$buy_subscription_link\", 'buy_course_link': \"$buy_course_link\", 'buy_consultation_link': \"$buy_consultation_link\"}"
                     ]
                 ];
                 break;

@@ -7,12 +7,29 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\BaseController;
 use Illuminate\Support\Str;
+use Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class CourseController extends BaseController
 {
-    public function show_course()
+    public function show_course(Request $request)
     {
-        return view('course.payment');
+        if ($request->exists('signature') && !empty($request->input('signature'))) {
+            $signature = $request->input('signature');
+            try {
+                $user_id = Crypt::decrypt($signature);
+                $user = User::find($user_id);
+                if ($user) {
+                    return view('course.payment', compact('user'));
+                } else {
+                    return view('course.payment-new');
+                }
+            } catch (DecryptException $decryptException) {
+                return view('course.payment-new');
+            }
+        } else {
+            return view('course.payment-new');
+        }
     }
 
     public function buy_course(Request $request)
