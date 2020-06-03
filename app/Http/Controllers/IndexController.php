@@ -33,7 +33,7 @@ class IndexController extends BaseController
                 return response('Ошибка! Не переживайте это со стороны сервера :(');
             }
         } else {
-            return response('Такой пользователь уже зарегистрирован.');
+            return response("Такой пользователь уже зарегистрирован. <a href='/buy-subscription'>Посмотрите наши тарифы</a>");
         }
     }
 

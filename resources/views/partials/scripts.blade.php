@@ -89,22 +89,10 @@
         $('#topNubex').click(function() {
             $('body,html').animate({scrollTop:0},700);
         });
+        $("#footer_pa").click(function(){
+            $("#subscribeModal").modal();
+        });
     });
 </script>
-
-@if(!$agent->isMobile())
-    <style>
-        .navbar {
-            position: relative;
-        }
-        .navbar-collapse {
-            flex-grow: 0 !important;
-        }
-        .navbar-expand-lg {
-            justify-content: space-evenly !important;
-        }
-
-    </style>
-@endif
 
 @stack('scripts')

@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\User;
 use Esputnik;
+use Crypt;
 
 class FreePDC extends Command
 {
@@ -45,15 +46,17 @@ class FreePDC extends Command
                     $pdc_Number = Esputnik::getPDCNumber($user->birth_date);
                     $pdc = Esputnik::value_lists($pdc_Number);
                     $data = [];
+                    $signature = Crypt::encrypt($user->id);
                     $data['name'] = $user->name;
                     $data['email'] = $user->email;
                     $data['pdc'] = $pdc;
-                    $data['buy_link'] = route('buy.subscription');
+                    $data['buy_subscription_link'] = route('buy.subscription')."?signature=".$signature;
+                    $data['buy_course_link'] = route('show.course')."?signature=".$signature;
+                    $data['buy_consultation_link'] = route('show.consultation')."?signature=".$signature;
                     $user->free_count++;
                     $user->save();
 
                     $data['number'] = ($user->free_count == 2) ? 'второй' : 'третий';
-                    $data['date'] = date('d.m.Y');
 
                     Esputnik::sendEmail(2188363, $data, 2);
 

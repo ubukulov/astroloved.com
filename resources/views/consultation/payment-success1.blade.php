@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="ru">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +20,7 @@
             <div class="col">
                 <h5>БЛАГОДАРИМ ВАС ЗА ОПЛАТУ!</h5>
                 <div class="textov">
-                    <p>На Ваш email мы отправили доступ к курсу. Успешного обучения!</p>
+                    <p>Пожалуйста ожидайте. В самое ближайшее время с Вами свяжется астролог чтобы уточнит дату и время консультации.</p>
                     <p><a href="{{ route('home') }}">Перейти в главную</a></p>
                 </div>
             </div>

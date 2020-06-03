@@ -1,0 +1,91 @@
+body {
+  padding: 0px !important;
+  margin: 0px !important;
+}
+.xpp_btn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.xpp_btn:active {
+  border-color: #F42267;
+}
+.xpp_btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(244, 34, 103, 0.25);
+}
+#topNubex {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
+.zk_btn:active {
+  border-color: #69328E;
+}
+.zk_btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(105, 50, 142, 0.25);
+}
+.po_btn {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.po_btn:active {
+  border-color: #FFD700;
+}
+.po_btn:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 215, 0, 0.25);
+}
+.consultationModal,
+.educationModal,
+.subscribePayModal {
+  max-width: 100%;
+}
+@media (min-width: 767px) {
+  .consultationModal,
+  .educationModal,
+  .subscribePayModal {
+    width: 900px;
+  }
+}
+.modal-footer {
+  justify-content: center;
+}
+#consultationModal h1,
+#consultationModal h4 {
+  color: #000;
+  text-transform: lowercase;
+}
+#consultationModal ul {
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+  line-height: 14px;
+}
+#consultationModal ul li {
+  margin-bottom: 10px;
+}
+#educationModal {
+  text-align: left;
+}
+#educationModal h1,
+#educationModal h4,
+#educationModal h3,
+#educationModal p {
+  color: #000;
+}
+#educationModal ul {
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+  line-height: 14px;
+}
+#educationModal ul li {
+  margin-bottom: 10px;
+}
+#educationModal h3 {
+  text-transform: capitalize;
+}
+.subscribePayModal .card {
+  color: #000;
+  margin-top: 20px;
+}
+/*# sourceMappingURL=my.css.map */

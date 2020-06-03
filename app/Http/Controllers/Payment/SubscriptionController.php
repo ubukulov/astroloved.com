@@ -10,12 +10,29 @@ use Illuminate\Http\Request;
 use Artisan;
 use Illuminate\Support\Str;
 use Esputnik;
+use Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class SubscriptionController extends BaseController
 {
-    public function buy_subscription()
+    public function buy_subscription(Request $request)
     {
-        return view('subscription.payment');
+        if ($request->exists('signature') && !empty($request->input('signature'))) {
+            $signature = $request->input('signature');
+            try {
+                $user_id = Crypt::decrypt($signature);
+                $user = User::find($user_id);
+                if ($user) {
+                    return view('subscription.payment', compact('user'));
+                } else {
+                    return view('subscription.payment-new');
+                }
+            } catch (DecryptException $decryptException) {
+                return view('subscription.payment-new');
+            }
+        } else {
+            return view('subscription.payment-new');
+        }
     }
 
     public function buy(Request $request)
@@ -80,7 +97,7 @@ class SubscriptionController extends BaseController
             'pg_failure_url' => env('APP_URL').'/buy-subscription-error',
         ];
 
-        $request['pg_testing_mode'] = 1; //add this parameter to request for testing payments
+        //$request['pg_testing_mode'] = 1; //add this parameter to request for testing payments
 
         //if you pass any of your parameters, which you want to get back after the payment, then add them. For example:
         $request['client_name'] = $name;
@@ -122,15 +139,19 @@ class SubscriptionController extends BaseController
             switch ($payment->tariff) {
                 case 'week':
                     $actived_at = $today->addWeek();
-                    $period = 'недели';
+                    $route_name = 'subs.week';
                     break;
                 case 'month':
                     $actived_at = $today->addMonth();
-                    $period = 'месяца';
+                    $route_name = 'subs.month';
                     break;
                 case 'year':
                     $actived_at = $today->addYear();
-                    $period = 'года';
+                    $route_name = 'subs.year';
+                    break;
+                default:
+                    $route_name = 'subs.week';
+                    $actived_at = $today->addWeek();
                     break;
             }
             $payment->update([
@@ -140,14 +161,28 @@ class SubscriptionController extends BaseController
             Artisan::call('send-pdc:one', [
                 'user' => $payment->user_id
             ]);
-        } else {
-            $period = 'месяца';
+
+            return redirect()->route($route_name);
         }
-        return view('subscription.payment-success', compact('period'));
     }
 
     public function buy_error()
     {
         dd("Ошибка при оплате");
+    }
+
+    public function week()
+    {
+        return view('subscription.payment-success-week');
+    }
+
+    public function month()
+    {
+        return view('subscription.payment-success-month');
+    }
+
+    public function year()
+    {
+        return view('subscription.payment-success-year');
     }
 }

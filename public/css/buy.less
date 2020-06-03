@@ -1,0 +1,181 @@
+@osn: #131731;
+@wa: #fff;
+@pink: #f42267;
+@violet: #69328e;
+
+section#b1 {
+  padding: 10px 0px 50px;
+  background: url(../img/fon-glav.jpg) center center no-repeat;
+  background-size: cover;
+
+  .navbar {
+    .navbar-toggler {
+      color: @wa;
+      text-align: left;
+    }
+
+    ul {
+      li {
+        a {
+          opacity: .7;
+          color: @wa;
+          font-size: 17px;
+
+          &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            background-color: @wa;
+            height: 1px;
+            transform: scale(0);
+            transition: all .3s;
+          }
+
+          &:hover::after {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  h4 {
+    margin-top: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    span {
+      text-transform: uppercase;
+      color: gold;
+    }
+  }
+
+  .vidos {
+    display: block;
+    width: 853px;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+}
+
+button.buy-cursov-gold {
+  background-color: rgb(255, 215, 0);
+  color: black;
+
+  &:hover {
+    background-color: rgba(255, 215, 0, 0.94);
+    color: black;
+  }
+}
+
+
+
+.buy-foot {
+  position: relative;
+  padding: 50px 0 10px;
+  background-color: #090312;
+
+  a {
+    color: @wa;
+    text-decoration: none;
+
+    &:hover {
+      color: @wa;
+      text-decoration: none;
+    }
+  }
+
+  a.pol {
+    border-bottom: 1px dashed;
+  }
+
+  .menushka {
+    text-align: left;
+
+    h5 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 12px;
+
+      a {
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 0.9;
+          color: gold;
+        }
+      }
+    }
+  }
+
+  img.footer-logo {
+    margin-bottom: 10px;
+    width: 70px;
+  }
+
+  .cont {
+    position: absolute;
+    right: 0px;
+    display: block;
+    text-align: center;
+
+    a {
+      padding: 2px;
+    }
+
+    a.buttons-footers {
+      margin-bottom: -15px;
+      display: block;
+      background-color: @violet;
+      padding: 10px 20px;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: @wa;
+      text-decoration: none;
+      -webkit-box-shadow: 5px 5px 44px -5px rgba(0, 0, 0, 0.54);
+      -moz-box-shadow: 5px 5px 44px -5px rgba(0, 0, 0, 0.54);
+      box-shadow: 5px 5px 44px -5px rgba(0, 0, 0, 0.54);
+
+      &:hover {
+        background-color: #7e42a7;
+      }
+    }
+
+    a.roz {
+      background-color: @pink;
+
+      &:hover {
+        background-color: #fa427f;
+      }
+    }
+
+    a.buy-cursov-gold {
+      background-color: rgb(255, 215, 0);
+      color: black;
+
+      &:hover {
+        background-color: rgba(255, 215, 0, 0.94);
+        color: black;
+      }
+    }
+  }
+
+  .cooper {
+    opacity: 0.6;
+    padding: 20px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .buy-foot {
+    .cont {
+      position: relative;
+      margin: 50px 0px;
+    }
+  }
+}

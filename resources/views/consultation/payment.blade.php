@@ -1,23 +1,51 @@
-@extends('layouts.app')
-@section('header')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <section class="text-center" id="b1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h4>Личная консультация с ведическим астрологом</h4>
+@extends('layouts.dop')
+@section('content')
+    <section class="text-center" id="b1">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4>Личная консультация с ведическим астрологом</h4>
 
-                            <div class="vidos">
-                                <iframe width="100%" height="480" src="https://www.youtube.com/embed/9bpt0R7VmvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            </div>
-                            <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill">Заказать консультацию</button>
-                        </div>
+                    <div class="vidos">
+                        <iframe width="100%" height="480" src="https://www.youtube.com/embed/9bpt0R7VmvE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
+                    <button type="button" data-toggle="modal" data-target="#consultationModal" class="btn btn-violet rounded-pill zk_btn">Заказать консультацию</button>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
-</div>
+    </section>
 @endsection
+@section('footer_buttons')
+
+@endsection
+@push('scripts')
+    <script>
+        var buy_consultation = new Vue({
+            el: '#consultationModal',
+            data: {
+                name: "{!! $user->name !!}",
+                email: "{!! $user->email !!}",
+            },
+            methods: {
+                buyConsultation(type) {
+                    let form_data = new FormData();
+                    form_data.append('name', this.name);
+                    form_data.append('tariff', type);
+                    form_data.append('email', this.email);
+
+                    axios.post('/buy-consultation', form_data)
+                        .then(res => {
+                            window.location = res.data;
+                        })
+                        .catch(err => {
+                            console.log(err)
+                        })
+                },
+                validEmail: function (email) {
+                    var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return re.test(email);
+                }
+            }
+        })
+    </script>
+@endpush
