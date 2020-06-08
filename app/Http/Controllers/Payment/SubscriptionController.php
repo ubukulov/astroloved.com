@@ -23,7 +23,11 @@ class SubscriptionController extends BaseController
                 $user_id = Crypt::decrypt($signature);
                 $user = User::find($user_id);
                 if ($user) {
-                    return view('subscription.payment', compact('user'));
+                    if ($request->exists('exist_user') && !empty($request->input('exist_user'))) {
+                        return view('subscription.payment-exists-user', compact('user'));
+                    } else {
+                        return view('subscription.payment', compact('user'));
+                    }
                 } else {
                     return view('subscription.payment-new');
                 }
