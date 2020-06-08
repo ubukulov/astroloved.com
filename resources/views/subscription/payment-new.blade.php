@@ -23,7 +23,7 @@
                     <h4>Персональный астропрогноз на каждый день от ведического астролога</h4>
                     <p>Проверьте, насколько точными и полезными окажутся для Вас эти прогнозы! Пробный период <span>3 ДНЯ БЕСПЛАТНО!</span></p>
                     <div class="vidos">
-                        <video width="100%" height="480" autoplay preload="none" controls controlsList="nodownload">
+                        <video width="100%" @if(!$agent->isMobile()) height="480" @endif autoplay preload="none" controls controlsList="nodownload">
                             <source src="https://astroloved.s3.eu-central-1.amazonaws.com/astroloved.com/videos/pres_subs.mp4" type="video/mp4">
                         </video>
                     </div>

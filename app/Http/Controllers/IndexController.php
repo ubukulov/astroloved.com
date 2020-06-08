@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Esputnik;
+use Crypt;
 
 class IndexController extends BaseController
 {
@@ -47,6 +48,10 @@ class IndexController extends BaseController
             $data['pdc'] = $pdc;
             $data['number'] = 'первый';
             $data['date'] = date('d.m.Y');
+            $signature = Crypt::encrypt($user->id);
+            $data['buy_subscription_link'] = route('buy.subscription')."?signature=".$signature;
+            $data['buy_course_link'] = route('show.course')."?signature=".$signature;
+            $data['buy_consultation_link'] = route('show.consultation')."?signature=".$signature;
             Esputnik::sendEmail(2188363, $data, 2);
             $message = 'Вы успешно подтвердили свой адрес электронной почты.';
         } else {
