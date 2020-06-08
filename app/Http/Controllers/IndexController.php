@@ -34,7 +34,9 @@ class IndexController extends BaseController
                 return response('Ошибка! Не переживайте это со стороны сервера :(');
             }
         } else {
-            return response("Такой пользователь уже зарегистрирован. <a href='/buy-subscription'>Посмотрите наши тарифы</a>");
+            $user = User::where(['email' => $data['email']])->first();
+            $signature = Crypt::encrypt($user->id);
+            return response("Такой пользователь уже зарегистрирован. <a href=\"/buy-subscription?signature=$signature\">Посмотрите наши тарифы</a>");
         }
     }
 

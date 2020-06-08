@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="form-group" style="margin-bottom: 0px;">
-                    <input type="text" id="birth_date" placeholder="День рождения" class="form-control">
+                    <input @if($agent->isSafari()) type="date" @else type="text" @endif id="birth_date" placeholder="День рождения" class="form-control" value="MM.DD.YY">
                 </div>
 
                 <div v-if="information" v-html="information" id="alert" class="alert alert-success fade show">
