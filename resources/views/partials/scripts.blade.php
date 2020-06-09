@@ -89,9 +89,6 @@
         $('#topNubex').click(function() {
             $('body,html').animate({scrollTop:0},700);
         });
-        $("#footer_pa").click(function(){
-            $("#subscribeModal").modal();
-        });
     });
 </script>
 

@@ -63,7 +63,7 @@
             </div>
             <div class="row text-center">
                 <div class="col">
-                    <button type="button" data-toggle="modal" data-target="#subscribeModal" class="btn btn-pink rounded-pill xpp_btn">Хочу Получать прогнозы</button>
+                    <button type="button" onclick='window.location="{{ route('buy.subscription') }}"' class="btn btn-pink rounded-pill xpp_btn">Хочу Получать прогнозы</button>
                     <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
                 </div>
             </div>
