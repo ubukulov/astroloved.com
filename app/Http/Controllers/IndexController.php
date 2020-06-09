@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Esputnik;
 use Crypt;
+use Location;
 
 class IndexController extends BaseController
 {
@@ -68,5 +69,12 @@ class IndexController extends BaseController
     public function confirmation()
     {
         return view('email.confirmation');
+    }
+
+    public function my_ip()
+    {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $position = Location::get($ip);
+        dd($position);
     }
 }

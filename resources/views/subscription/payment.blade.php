@@ -51,7 +51,7 @@
                                         <h4 class="my-0 font-weight-normal">Неделя</h4>
                                     </div>
                                     <div class="card-body">
-                                        <h1 class="card-title pricing-card-title">990 &#8376;</h1>
+                                        <h1 class="card-title pricing-card-title">{!! $price_week !!}</h1>
                                         <button @click="buySubscribe(1)" type="button" class="btn btn-pink rounded-pill xpp_btn">Купить</button>
                                     </div>
                                 </div>
@@ -60,7 +60,7 @@
                                         <h4 class="my-0 font-weight-normal">Месяц</h4>
                                     </div>
                                     <div class="card-body">
-                                        <h1 class="card-title pricing-card-title">2 440 &#8376;</h1>
+                                        <h1 class="card-title pricing-card-title">{!! $price_month !!}</h1>
                                         <button @click="buySubscribe(2)" type="button" class="btn btn-pink rounded-pill xpp_btn">Купить</button>
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@
                                         <h4 class="my-0 font-weight-normal">Год</h4>
                                     </div>
                                     <div class="card-body">
-                                        <h1 class="card-title pricing-card-title">19 440 &#8376;</h1>
+                                        <h1 class="card-title pricing-card-title">{!! $price_year !!}</h1>
                                         <button @click="buySubscribe(3)" type="button" class="btn btn-pink rounded-pill xpp_btn">Купить</button>
                                     </div>
                                 </div>

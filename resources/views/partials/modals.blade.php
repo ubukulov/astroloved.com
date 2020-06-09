@@ -99,7 +99,7 @@
                                 <h4 class="my-0 font-weight-normal">Консультация за 1 час</h4>
                             </div>
                             <div class="card-body">
-                                <h1 class="card-title pricing-card-title">38 212 &#8376;</h1>
+                                <h1 class="card-title pricing-card-title">{!! $price_ak1 !!}</h1>
                                 <ul class="mt-3 mb-4">
                                     <li>10% скидка для подписчика астрологических прогнозов на неделю</li>
                                     <li>25% скидка для подписчика астрологических прогнозов на месяц</li>
@@ -113,7 +113,7 @@
                                 <h4 class="my-0 font-weight-normal">Консультация за 2 часа</h4>
                             </div>
                             <div class="card-body">
-                                <h1 class="card-title pricing-card-title">64 960 &#8376;</h1>
+                                <h1 class="card-title pricing-card-title">{!! $price_ak2 !!}</h1>
                                 <ul class="mt-3 mb-4">
                                     <li>10% скидка для подписчика астрологических прогнозов на неделю</li>
                                     <li>25% скидка для подписчика астрологических прогнозов на месяц</li>
@@ -175,7 +175,7 @@
                                 <p class="card-text mb-auto">В результате прохождения этого курсе, у Вас будут знания о расчёте психотипа личности по дате рождения человека. Это позволит Вам правильно понимать природу человека, его мотивы, причины поступков, грамотно выстраивать взаимоотношения.</p>
                                 <p class="card-text mb-auto">Это знание практично и полезно как бизнесмену, для более глубокого понимания своих сотрудников и партнёров, так и домохозяйке, для лучшего понимания своих детей и мужа.</p>
                                 <br><br>
-                                <strong style="font-size: 40px;" class="d-inline-block mb-2 text-success">8 220 &#8376;</strong>
+                                <strong style="font-size: 40px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong>
                             </div>
                             <div class="col-md-3 d-none d-lg-block" style="background: url(https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg) no-repeat; background-size: cover">
 

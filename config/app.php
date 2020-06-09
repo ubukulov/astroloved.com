@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\EsputnikServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
     ],
 
     /*
@@ -228,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Esputnik' => App\Facades\Esputnik::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'Location' => \Stevebauman\Location\Facades\Location::class,
     ],
 
 ];
