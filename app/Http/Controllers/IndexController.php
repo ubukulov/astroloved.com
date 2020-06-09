@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Esputnik;
@@ -36,7 +37,8 @@ class IndexController extends BaseController
         } else {
             $user = User::where(['email' => $data['email']])->first();
             $signature = Crypt::encrypt($user->id);
-            return response("Такой пользователь уже зарегистрирован. <a href=\"/buy-subscription?signature=$signature\">Посмотрите наши тарифы</a>");
+            $hash = Crypt::encrypt(Carbon::now());
+            return response("Такой пользователь уже зарегистрирован. <a href=\"/buy-subscription?signature=$signature&exist_user=$hash\">Посмотрите наши тарифы</a>");
         }
     }
 
