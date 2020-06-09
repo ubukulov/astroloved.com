@@ -7,7 +7,7 @@
                     <h4>Курс №1. Определение Психотипов Личности По Дате Рождения Человека</h4>
                     <h5>Из серии курсов "Сам себе астролог"</h5>
                     <div class="vidos">
-                        <video width="100%" height="480" autoplay preload="none" controls controlsList="nodownload">
+                        <video width="100%" @if(!$agent->isMobile()) height="480" @endif autoplay preload="none" controls controlsList="nodownload">
                             <source src="https://astroloved.s3.eu-central-1.amazonaws.com/astroloved.com/videos/pre_course.mp4" type="video/mp4">
                         </video>
                     </div>

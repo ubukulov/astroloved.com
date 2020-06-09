@@ -16,11 +16,11 @@ $(document).ready(function(){
     //     })
     // });
     $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
-    // if ($('#birth_date').prop('type') == 'date') {
-    //     $("#birth_date").datepicker({
-    //         changeMonth: true,
-    //         changeYear: true,
-    //         yearRange: '1900:2020'
-    //     });
-    // }
+    if ($('#birth_date').prop('type') != 'date') {
+        $("#birth_date").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1900:2020'
+        });
+    }
 });
