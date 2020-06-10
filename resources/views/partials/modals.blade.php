@@ -83,13 +83,21 @@
             <div class="modal-body">
                 <div class="container">
                     @if(!isset($user))
-                    <div class="form-group">
-                        <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
-                    </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
+                        </div>
 
-                    <div class="form-group">
-                        <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
-                    </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваш телефон" v-model="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
+                        </div>
+                    @else
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваш телефон" v-model="phone" class="form-control">
+                        </div>
                     @endif
 
                     <div class="card-deck mb-3 text-center">
@@ -156,31 +164,27 @@
                 @endif
             </div>
             <div class="modal-body">
-                <div class="container">
-                    <div class="col-md-12">
-                        @if(!isset($user))
-                        <div class="form-group">
-                            <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
-                        </div>
+                @if(!isset($user))
+                    <div class="form-group">
+                        <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
+                    </div>
 
-                        <div class="form-group">
-                            <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
-                        </div>
-                        @endif
+                    <div class="form-group">
+                        <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
+                    </div>
+                @endif
 
-                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                            <div class="col-md-9 p-4 d-flex flex-column position-static">
-                                <h3 class="mb-0">Курс №1. Определение психотипов личности по дате рождения человека</h3>
-                                <div class="mb-1 text-muted">20.04.2020</div>
-                                <p class="card-text mb-auto">В результате прохождения этого курсе, у Вас будут знания о расчёте психотипа личности по дате рождения человека. Это позволит Вам правильно понимать природу человека, его мотивы, причины поступков, грамотно выстраивать взаимоотношения.</p>
-                                <p class="card-text mb-auto">Это знание практично и полезно как бизнесмену, для более глубокого понимания своих сотрудников и партнёров, так и домохозяйке, для лучшего понимания своих детей и мужа.</p>
-                                <br><br>
-                                <strong style="font-size: 40px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong>
-                            </div>
-                            <div class="col-md-3 d-none d-lg-block" style="background: url(https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg) no-repeat; background-size: cover">
+                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                    <div class="col-md-9 p-4 d-flex flex-column position-static">
+                        <h3 class="mb-0">Курс №1. Определение психотипов личности по дате рождения человека</h3>
+                        <div class="mb-1 text-muted">20.04.2020</div>
+                        <p class="card-text mb-auto">В результате прохождения этого курсе, у Вас будут знания о расчёте психотипа личности по дате рождения человека. Это позволит Вам правильно понимать природу человека, его мотивы, причины поступков, грамотно выстраивать взаимоотношения.</p>
+                        <p class="card-text mb-auto">Это знание практично и полезно как бизнесмену, для более глубокого понимания своих сотрудников и партнёров, так и домохозяйке, для лучшего понимания своих детей и мужа.</p>
+                        <br><br>
+                        <strong style="font-size: 40px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong>
+                    </div>
+                    <div class="col-md-3 d-none d-lg-block" style="background: url(https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg) no-repeat; background-size: cover">
 
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

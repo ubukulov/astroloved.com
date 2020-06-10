@@ -39,6 +39,7 @@ class ConsultationController extends BaseController
         $data = $request->all();
         $email = $data['email'];
         $name = $data['name'];
+        $phone = $data['phone'];
         $tariff = $data['tariff'];
 
         $user = User::where(['email' => $email])->first();
@@ -58,6 +59,8 @@ class ConsultationController extends BaseController
                 Esputnik::sendEmail(2191643, $data);
             }
         }
+        $user->phone = $phone;
+        $user->save();
 
         switch ($tariff){
             case 1:

@@ -26,6 +26,7 @@
             el: '#consultationModal',
             data: {
                 name: "{!! $user->name !!}",
+                phone: "{!! $user->phone !!}",
                 email: "{!! $user->email !!}",
             },
             methods: {

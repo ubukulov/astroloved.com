@@ -62,6 +62,7 @@
             el: '#consultationModal',
             data: {
                 name: '',
+                phone: '',
                 email: '',
                 errors: [],
             },
@@ -73,6 +74,10 @@
                         this.errors.push('Укажите имя.');
                     }
 
+                    if (!this.phone) {
+                        this.errors.push('Укажите телефон');
+                    }
+
                     if (!this.email) {
                         this.errors.push('Укажите электронную почту.');
                     } else if(!this.validEmail(this.email)){
@@ -81,6 +86,7 @@
 
                     let form_data = new FormData();
                     form_data.append('name', this.name);
+                    form_data.append('phone', this.phone);
                     form_data.append('tariff', type);
                     form_data.append('email', this.email);
 
