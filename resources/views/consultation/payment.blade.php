@@ -1,4 +1,9 @@
 @extends('layouts.dop')
+@section('meta')
+    @parent
+    <meta name="description" content="Личная консультация с ведическим астрологом!">
+    <meta name="keywords" content="ведическая астрология, астрология, астролог, астрологическая карта, астролог консультация,  джойтиш, гороскоп, знаки зодиака, гороскоп на сегодня">
+@endsection
 @section('content')
     <section class="text-center" id="b1">
         <div class="container">

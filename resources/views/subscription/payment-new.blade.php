@@ -1,4 +1,9 @@
 @extends('layouts.dop')
+@section('meta')
+    @parent
+    <meta name="description" content="Каждый день получайте свой личный астрологический прогноз от профессионального ведического астролога! Знайте свой день силы! действуйте эффективно! постройте успешную судьбу!">
+    <meta name="keywords" content="ведическая астрология, астрология, астролог, астрологическая карта, астролог консультация,  джойтиш, гороскоп, знаки зодиака, гороскоп на сегодня">
+@endsection
 @section('content')
     <section class="text-center" id="b1">
         <nav class="navbar navbar-expand-lg">

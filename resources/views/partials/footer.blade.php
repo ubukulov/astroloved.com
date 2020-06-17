@@ -14,9 +14,10 @@
             <div class="col-md">
                 <div class="cont">
                     <img class="footer-logo" src="/img/log.png" alt="Astroloded"> <br>
-                    <a href="#"><img width="20px" src="/img/whats.png" alt=""></a>
+                    <a href="https://wa.me/77082546562" target="_blank"><img width="20px" src="/img/whats.png" alt=""></a>
                     <a href="https://www.instagram.com/dmitriy_freiman/" target="_blank"><img width="20px" src="/img/inst.png" alt=""></a> <br>
-                    <a href="mailto:admin@astroloved.com">admin@astroloved.com</a> <br><br>
+                    <a href="mailto:admin@astroloved.com">admin@astroloved.com</a> <br>
+                    <a href="tel:+7 708 254 6562">+7 708 254 6562</a><br><br>
                     <a href="{{ route('buy.subscription') }}" id="footer_pa" class="buttons-footers rounded-pill roz">Получать астропрогнозы</a> <br>
                     <a href="{{ route('show.consultation') }}" class="buttons-footers rounded-pill">Консультация астролога</a>
                 </div>
