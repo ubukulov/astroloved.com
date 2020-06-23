@@ -33,12 +33,16 @@
                 name: "{!! $user->name !!}",
                 phone: "{!! $user->phone !!}",
                 email: "{!! $user->email !!}",
+                errors: []
             },
             methods: {
                 buyConsultation(type) {
+                	if (!this.phone) {
+	                    this.errors.push('Укажите телефон.');
+	                }
                     let form_data = new FormData();
                     form_data.append('name', this.name);
-                    form_data.append('tariff', type);
+                    form_data.append('phone', phone);
                     form_data.append('email', this.email);
 
                     axios.post('/buy-consultation', form_data)

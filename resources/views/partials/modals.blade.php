@@ -82,7 +82,15 @@
             </div>
             <div class="modal-body">
                 <div class="container">
+                		<p v-if="errors.length" style="margin-bottom: 0px !important;">
+		                    <b style="color: #000;">Пожалуйста исправьте указанные ошибки:</b>
+			                <ul style="color: red; padding-left: 15px; list-style: circle; text-align: left;">
+			                    <li v-for="error in errors">@{{ error }}</li>
+			                </ul>
+		                </p>
                     @if(!isset($user))
+                        <p style="color: #000;">Для заказа консультации, пожалуйста заполните поля ввода данных и сделайте заказ. После оплаты я свяжусь с вами и мы уточним время и дату консультации.</p>
+
                         <div class="form-group">
                             <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
                         </div>
@@ -165,6 +173,13 @@
             </div>
             <div class="modal-body">
                 @if(!isset($user))
+                	<p v-if="errors.length" style="margin-bottom: 0px !important;">
+	                    <b>Пожалуйста исправьте указанные ошибки:</b>
+		                <ul style="color: red; padding-left: 15px; list-style: circle; text-align: left;">
+		                    <li v-for="error in errors">@{{ error }}</li>
+		                </ul>
+	                </p>
+
                     <div class="form-group">
                         <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
                     </div>
@@ -172,11 +187,12 @@
                     <div class="form-group">
                         <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
                     </div>
+
                 @endif
 
                 <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div class="col-md-9 p-4 d-flex flex-column position-static">
-                        <h3 class="mb-0">Курс №1. Определение психотипов личности по дате рождения человека</h3>
+                        <h3 class="mb-0" style="text-transform: initial;">Курс №1. Определение психотипов личности по дате рождения человека</h3>
                         <div class="mb-1 text-muted">20.04.2020</div>
                         <p class="card-text mb-auto">В результате прохождения этого курсе, у Вас будут знания о расчёте психотипа личности по дате рождения человека. Это позволит Вам правильно понимать природу человека, его мотивы, причины поступков, грамотно выстраивать взаимоотношения.</p>
                         <p class="card-text mb-auto">Это знание практично и полезно как бизнесмену, для более глубокого понимания своих сотрудников и партнёров, так и домохозяйке, для лучшего понимания своих детей и мужа.</p>
