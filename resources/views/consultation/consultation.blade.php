@@ -1,8 +1,8 @@
 @extends('layouts.dop')
 @section('meta')
     @parent
-    <meta name="description" content="Курс №1. Определение Психотипов Личности По Дате Рождения Человека">
-    <meta name="keywords" content="ведическая астрология, астрология, астролог, астрологическая карта, астролог консультация,  джойтиш, школы астрологии, астрология обучение, обучение астрологии, как стать астрологом, курсы астрологии, ведическая астрология обучение, обучение астрологии онлайн, курсы по астрологии, обучение ведической астрологии, курс астрологии, курсы астрологии онлайн, астропсихология обучение, обучение на астролога, астрология курсы">
+    <meta name="description" content="Личная консультация с ведическим астрологом!">
+    <meta name="keywords" content="ведическая астрология, астрология, астролог, астрологическая карта, астролог консультация,  джойтиш, гороскоп, знаки зодиака, гороскоп на сегодня">
 @endsection
 @section('content')
     <section class="text-center" id="b1">
@@ -17,7 +17,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Главная</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ route('buy.subscription') }}">Астопрогнозы</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('show.consultation') }}">Консультация астролога</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('show.course') }}">Пройти обучение</a></li>
                     <li class="nav-item"><a class="nav-link" href="#buy-foot">Контакты</a></li>
                 </ul>
             </div>
@@ -25,14 +25,12 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h4>Курс №1. Ведическая астрология. Определение Психотипов Личности По Дате Рождения Человека</h4>
-                    <h5>Из серии курсов "Сам себе астролог"</h5>
+                    <h4>15 минутная, бесплатная, личная консультация с ведическим астрологом</h4>
+                    <p>Акция продлится до конца этого месяца!</p>
                     <div class="vidos">
-                        <video width="100%" @if(!$agent->isMobile()) height="480" @endif autoplay preload="none" controls controlsList="nodownload">
-                            <source src="https://astroloved.s3.eu-central-1.amazonaws.com/astroloved.com/videos/pre_course.mp4" type="video/mp4">
-                        </video>
+                        <iframe width="853" height="480" src="https://www.youtube.com/embed/DN5AGo_cvfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aut></iframe>
                     </div>
-                    <button type="button" data-toggle="modal" data-target="#educationModal" class="btn buy-cursov-gold rounded-pill po_btn">Пройти обучение</button>
+                    <button type="button" data-toggle="modal" data-target="#consultationModal2" class="btn btn-violet rounded-pill zk_btn">Заказать консультацию</button>
                 </div>
             </div>
         </div>
@@ -44,7 +42,7 @@
             <h5>МЕНЮ</h5>
             <p><a href="{{ route('home') }}">Главная</a></p>
             <p><a href="{{ route('buy.subscription') }}">Астопрогнозы</a></p>
-            <p><a href="{{ route('show.consultation') }}">Консультация астролога</a></p>
+            <p><a href="{{ route('show.course') }}">Пройти обучение</a></p>
             <p><a href="#buy-foot">Контакты</a></p>
         </div>
     </div>
@@ -57,25 +55,30 @@
                         <span>admin@astroloved.com</span> <br><br>
             -->
             <a class="buttons-footers rounded-pill roz" href="{{ route('buy.subscription') }}">Получать астропрогнозы</a> <br>
-            <a class="buttons-footers rounded-pill" href="{{ route('show.consultation.new') }}">Консультация астролога</a>
+            <a class="buttons-footers buy-cursov-gold rounded-pill" href="{{ route('show.course') }}">Пройти обучение</a>
         </div>
     </div>
 @endsection
 @push('scripts')
     <script>
-        var buy_course = new Vue({
-            el: '#educationModal',
+        var buy_consultation = new Vue({
+            el: '#consultationModal2',
             data: {
                 name: '',
+                phone: '',
                 email: '',
                 errors: [],
             },
             methods: {
-                buyCourse() {
+                getConsultation() {
                     this.errors = [];
 
                     if (!this.name) {
                         this.errors.push('Укажите имя.');
+                    }
+
+                    if (!this.phone) {
+                        this.errors.push('Укажите телефон');
                     }
 
                     if (!this.email) {
@@ -86,12 +89,13 @@
 
                     let form_data = new FormData();
                     form_data.append('name', this.name);
+                    form_data.append('phone', this.phone);
                     form_data.append('email', this.email);
 
                     if (this.errors.length == 0) {
-                        axios.post('/buy-course', form_data)
+                        axios.post('/buy-consultation-new', form_data)
                             .then(res => {
-                                window.location = res.data;
+                                window.location = '/buy-consultation-new/success';
                             })
                             .catch(err => {
                                 console.log(err)

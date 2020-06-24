@@ -44,7 +44,7 @@
         <div class="menushka">
             <h5>МЕНЮ</h5>
             <p><a href="{{ route('home') }}">Главная</a></p>
-            <p><a href="{{ route('show.consultation') }}">Консультация астролога</a></p>
+            <p><a href="{{ route('show.consultation.new') }}">Консультация астролога</a></p>
             <p><a href="{{ route('show.course') }}">Пройти обучение</a></p>
             <p><a href="#buy-foot">Контакты</a></p>
         </div>

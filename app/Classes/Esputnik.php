@@ -88,6 +88,18 @@ class Esputnik
                     ]
                 ];
                 break;
+
+            case 4:
+                // новый пользователь оставил заявку на 15мин консультацию
+                $phone = $data['phone'];
+                $email = $data['email'];
+                $json_value->recipients = [
+                    [
+                        'email' => $data['email'],
+                        'jsonParam' => "{'phone': \"$phone\", 'firstname': $first_name, 'email': \"$email\"}"
+                    ]
+                ];
+                break;
         }
 
         // В подготовленном сообщении можно использовать передаваемое значение "discount" для каждого контакта, обратившись к нему таким образом: $data.get('discount')

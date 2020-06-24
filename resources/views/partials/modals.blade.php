@@ -211,3 +211,69 @@
         </div>
     </div>
 </div>
+
+
+<!-- consultationModal2 -->
+<div class="modal fade" id="consultationModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered consultationModal" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                @if($agent->isMobile())
+                    <h5 style="color: #1a1a1a; text-transform: uppercase;" class="modal-title" id="exampleModalLabel">Консультация астролога</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span style="font-size: 30px;" aria-hidden="true">&times;</span>
+                    </button>
+                @else
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 style="color: #1a1a1a; text-transform: uppercase;" class="modal-title" id="exampleModalLabel">Консультация астролога</h5>
+                            </div>
+
+                            <div class="col-md-4">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span style="font-size: 30px;" aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <p v-if="errors.length" style="margin-bottom: 0px !important;">
+                        <b style="color: #000;">Пожалуйста исправьте указанные ошибки:</b>
+                    <ul style="color: red; padding-left: 15px; list-style: circle; text-align: left;">
+                        <li v-for="error in errors">@{{ error }}</li>
+                    </ul>
+                    </p>
+                    @if(!isset($user))
+                        <p style="color: #000;">Для заказа бесплатной, предварительной, 15-минутной консультации, пожалуйста заполните поля ввода данных и сделайте заказ. Я свяжусь с вами и мы уточним время и дату консультации. С Уважением Дмитрий Фрейман!</p>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваше имя" v-model="name" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваш телефон" v-model="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
+                        </div>
+                    @else
+                        <div class="form-group">
+                            <input type="text" placeholder="Ваш телефон" v-model="phone" class="form-control">
+                        </div>
+                    @endif
+
+                    <div class="form-group">
+                        <button id="pbp15" type="button" @click="getConsultation()" class="btn btn-violet rounded-pill zk_btn">Получить бесплатную консультацию</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

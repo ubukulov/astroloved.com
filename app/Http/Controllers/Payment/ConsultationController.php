@@ -10,6 +10,7 @@ use App\Http\Controllers\BaseController;
 use Illuminate\Support\Str;
 use Artisan;
 use Crypt;
+use Esputnik;
 use Illuminate\Contracts\Encryption\DecryptException;
 
 class ConsultationController extends BaseController
@@ -32,6 +33,11 @@ class ConsultationController extends BaseController
         } else {
             return view('consultation.payment-new');
         }
+    }
+
+    public function show_consultation_new()
+    {
+        return view('consultation.consultation');
     }
 
     public function buy_consultation(Request $request)
@@ -117,6 +123,38 @@ class ConsultationController extends BaseController
         return response($pay_url);
     }
 
+    public function buy_consultation_new(Request $request)
+    {
+        $data = $request->all();
+        $email = $data['email'];
+        $phone = $data['phone'];
+
+        $user = User::where(['email' => $email])->first();
+        if (!$user) {
+            // Пользовател не найден
+            $password = Str::random(6);
+            $data['birth_date'] = strtotime($data['birth_date']);
+            $data['password'] = bcrypt($password);
+            $data['confirmation_token'] = User::generateToken();
+            $data['free_count'] = 0;
+            $user = User::create($data);
+            if ($user) {
+                $data['confirmation_link'] = route('confirm.email', ['user' => $user->id, 'token' => $user->confirmation_token]);
+                Esputnik::createUserInES($user);
+                //Esputnik::sendEmail(2191643, $data);
+            }
+        }
+
+        $user->phone = $phone;
+        $user->save();
+
+        $data['email'] = 'admin@astroloved.com';
+
+        Esputnik::sendEmail(2247531, $data, 4);
+
+        return response('Заявка принят! Скоро с Вами свяжуться.');
+    }
+
     public function buy_consultation_success(Request $request)
     {
         $previous_url = $request->session()->previousUrl();
@@ -163,5 +201,10 @@ class ConsultationController extends BaseController
     public function consul_two()
     {
         return view('consultation.payment-success2');
+    }
+
+    public function get_consultation_success()
+    {
+        return view('consultation.success');
     }
 }

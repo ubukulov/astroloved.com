@@ -37,8 +37,15 @@ Route::group(['namespace' => 'Payment'], function(){
 # Consultation routes
     Route::get('/buy-consultation', 'ConsultationController@show_consultation')->name('show.consultation');
     Route::post('/buy-consultation', 'ConsultationController@buy_consultation')->name('buy.consultation');
+    Route::get('/buy-consultation-new', 'ConsultationController@show_consultation_new')->name('show.consultation.new');
+    Route::post('/buy-consultation-new', 'ConsultationController@buy_consultation_new')->name('buy.consultation.new');
+    Route::get('/buy-consultation-new/success', 'ConsultationController@get_consultation_success');
     Route::get('/buy-consultation-success', 'ConsultationController@buy_consultation_success');
     Route::get('/buy-consultation-error', 'ConsultationController@buy_error');
     Route::get('/success-consultation1', 'ConsultationController@consul_one')->name('consul.one');
     Route::get('/success-consultation2', 'ConsultationController@consul_two')->name('consul.two');
+
+# Robocassa
+    Route::get('/robokassa/success/payment', 'RoboController@success_payment')->name('robo.success.payment');
+    Route::get('/robokassa/fail/payment', 'RoboController@fail_payment')->name('robo.fail.payment');
 });
