@@ -95,7 +95,7 @@
                     if (this.errors.length == 0) {
                         axios.post('/buy-consultation-new', form_data)
                             .then(res => {
-                                window.location = '/buy-consultation-new/success';
+                                window.location = '/success-consultation-15min';
                             })
                             .catch(err => {
                                 console.log(err)

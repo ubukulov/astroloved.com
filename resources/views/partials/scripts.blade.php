@@ -91,7 +91,7 @@
         });
     });
 </script>
-
-<script type="text/javascript" src="https://auth.robokassa.kz/Merchant/PaymentForm/FormSS.js?MerchantLogin=astroloved&InvoiceID=0&Culture=ru&Encoding=utf-8&OutSum=0,00&SignatureValue=ef8ebcf78bb799cf94129cddae89cafa"></script>
+<!--
+<script type="text/javascript" src="https://auth.robokassa.kz/Merchant/PaymentForm/FormSS.js?MerchantLogin=astroloved&InvoiceID=0&Culture=ru&Encoding=utf-8&OutSum=0,00&SignatureValue=ef8ebcf78bb799cf94129cddae89cafa"></script>-->
 
 @stack('scripts')

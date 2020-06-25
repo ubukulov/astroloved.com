@@ -39,7 +39,7 @@ Route::group(['namespace' => 'Payment'], function(){
     Route::post('/buy-consultation', 'ConsultationController@buy_consultation')->name('buy.consultation');
     Route::get('/buy-consultation-new', 'ConsultationController@show_consultation_new')->name('show.consultation.new');
     Route::post('/buy-consultation-new', 'ConsultationController@buy_consultation_new')->name('buy.consultation.new');
-    Route::get('/buy-consultation-new/success', 'ConsultationController@get_consultation_success');
+    Route::get('/success-consultation-15min', 'ConsultationController@get_consultation_success');
     Route::get('/buy-consultation-success', 'ConsultationController@buy_consultation_success');
     Route::get('/buy-consultation-error', 'ConsultationController@buy_error');
     Route::get('/success-consultation1', 'ConsultationController@consul_one')->name('consul.one');
