@@ -28,7 +28,7 @@
                     <h4>15 минутная, бесплатная, личная консультация с ведическим астрологом</h4>
                     <p>Акция продлится до конца этого месяца!</p>
                     <div class="vidos">
-                        <iframe width="853" height="480" src="https://www.youtube.com/embed/DN5AGo_cvfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aut></iframe>
+                        <iframe style="max-width: 100%;" width="853" height="480" src="https://www.youtube.com/embed/DN5AGo_cvfk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aut></iframe>
                     </div>
                     <button type="button" data-toggle="modal" data-target="#consultationModal2" class="btn btn-violet rounded-pill zk_btn">Заказать консультацию</button>
                 </div>
