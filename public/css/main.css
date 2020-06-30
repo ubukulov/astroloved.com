@@ -350,6 +350,10 @@ section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f3 {
   background: url(../img/review3.jpg) center center no-repeat;
   background-size: cover;
 }
+section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f4 {
+  background: url(../img/rw4.jpg) center center no-repeat;
+  background-size: cover;
+}
 section#reviews .carousel a.carousel-control-prev {
   margin-left: -23px;
 }
