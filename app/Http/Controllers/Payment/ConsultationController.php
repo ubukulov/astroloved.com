@@ -47,6 +47,7 @@ class ConsultationController extends BaseController
         $name = $data['name'];
         $phone = $data['phone'];
         $tariff = $data['tariff'];
+        $promo_code = $data['promocode'];
 
         $user = User::where(['email' => $email])->first();
         if ($user) {
@@ -83,8 +84,13 @@ class ConsultationController extends BaseController
                 break;
         }
 
+        // Если клиент ввел промокод, то сумма будет со скидкой 50%
+        if(!empty($promo_code) && strtolower($promo_code) == 'vega') {
+            $sum = $sum / 2;
+        }
+
         $payment = Payment::create([
-            'user_id' => $user->id, 'sum' => $sum, 'tariff' => 'consul'
+            'user_id' => $user->id, 'sum' => $sum, 'tariff' => 'consul', 'promocode' => $promo_code
         ]);
 
         $request = [

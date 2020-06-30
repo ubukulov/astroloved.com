@@ -102,9 +102,17 @@
                         <div class="form-group">
                             <input type="email" placeholder="Ваш Email" v-model="email" class="form-control">
                         </div>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Промокод" v-model="promocode" class="form-control">
+                        </div>
                     @else
                         <div class="form-group">
                             <input type="text" placeholder="Ваш телефон" v-model="phone" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" placeholder="Промокод" v-model="promocode" class="form-control">
                         </div>
                     @endif
 

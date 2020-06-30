@@ -33,6 +33,7 @@
                 name: "{!! $user->name !!}",
                 phone: "{!! $user->phone !!}",
                 email: "{!! $user->email !!}",
+                promocode: '',
                 errors: []
             },
             methods: {
@@ -42,8 +43,10 @@
 	                }
                     let form_data = new FormData();
                     form_data.append('name', this.name);
-                    form_data.append('phone', phone);
+                    form_data.append('phone', this.phone);
                     form_data.append('email', this.email);
+                    form_data.append('tariff', type);
+                    form_data.append('promocode', this.promocode);
 
                     axios.post('/buy-consultation', form_data)
                         .then(res => {

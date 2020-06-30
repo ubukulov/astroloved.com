@@ -8,7 +8,7 @@
         <p></p>
         <div class="main-header-buttons">
             <button type="button" onclick='window.location="{{ route('buy.subscription') }}"' class="btn btn-pink rounded-pill xpp_btn">Хочу Получать прогнозы</button>
-            <button type="button" onclick='window.location="{{ route('show.consultation.new') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
+            <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
         </div>
     </div>
 @stop
@@ -64,7 +64,7 @@
             <div class="row text-center">
                 <div class="col">
                     <button type="button" onclick='window.location="{{ route('buy.subscription') }}"' class="btn btn-pink rounded-pill xpp_btn">Хочу Получать прогнозы</button>
-                    <button type="button" onclick='window.location="{{ route('show.consultation.new') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
+                    <button type="button" onclick='window.location="{{ route('show.consultation') }}"' class="btn btn-violet rounded-pill">Консультация астролога</button>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                                 <h5>Практикующий астролог</h5>
                                 <p>"Жизнь каждого человека может быть более предсказуема, понятна и управляема, если знать, что его ожидает завтра. Расчёт Персонального Дня Силы на каждый день как раз и даёт это понимание и позволяет быть более эффективным каждый день."</p>
                                 <div class="knopp">
-                                    <a href="{{ route('show.consultation.new') }}" class="btn rounded-pill fiol">Заказать консультацию</a>
+                                    <a href="{{ route('show.consultation') }}" class="btn rounded-pill fiol">Заказать консультацию</a>
                                     <a href="{{ route('show.course') }}" class="btn rounded-pill gold">Пройти обучение</a>
                                 </div>
                             </div>

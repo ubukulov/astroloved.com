@@ -69,6 +69,7 @@
                 name: '',
                 phone: '',
                 email: '',
+                promocode: '',
                 errors: [],
             },
             methods: {
@@ -94,6 +95,7 @@
                     form_data.append('phone', this.phone);
                     form_data.append('tariff', type);
                     form_data.append('email', this.email);
+                    form_data.append('promocode', this.promocode);
 
                     if (this.errors.length == 0) {
                         axios.post('/buy-consultation', form_data)

@@ -57,7 +57,7 @@
                         <span>admin@astroloved.com</span> <br><br>
             -->
             <a class="buttons-footers rounded-pill roz" href="{{ route('buy.subscription') }}">Получать астропрогнозы</a> <br>
-            <a class="buttons-footers rounded-pill" href="{{ route('show.consultation.new') }}">Консультация астролога</a>
+            <a class="buttons-footers rounded-pill" href="{{ route('show.consultation') }}">Консультация астролога</a>
         </div>
     </div>
 @endsection
