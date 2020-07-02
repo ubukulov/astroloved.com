@@ -46,17 +46,27 @@ class IndexController extends BaseController
     public function confirm($user_id, $token) {
         $user = User::findOrFail($user_id);
         if ($user->confirm($token)) {
-            $pdc_Number = Esputnik::getPDCNumber($user->birth_date);
-            $pdc = Esputnik::value_lists($pdc_Number);
+
             $data['name'] = $user->name;
             $data['email'] = $user->email;
-            $data['pdc'] = $pdc;
             $data['number'] = 'первый';
             $data['date'] = date('d.m.Y');
             $signature = Crypt::encrypt($user->id);
             $data['buy_subscription_link'] = route('buy.subscription')."?signature=".$signature;
             $data['buy_course_link'] = route('show.course')."?signature=".$signature;
             $data['buy_consultation_link'] = route('show.consultation')."?signature=".$signature;
+
+            if ($user->round == 18) {
+                $user->round = 1;
+            } else {
+                $user->round++;
+            }
+            $user->save();
+
+            $pdc_Number = Esputnik::getPDCNumber($user->birth_date);
+            $pdc = Esputnik::value_lists($pdc_Number, $user);
+            $data['pdc'] = $pdc;
+
             Esputnik::sendEmail(2188363, $data, 2);
             $message = 'Вы успешно подтвердили свой адрес электронной почты.';
         } else {
