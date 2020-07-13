@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Payment;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use Illuminate\Support\Str;
 use Esputnik;
 use Crypt;
 use Location;
+use Artisan;
 
 class IndexController extends BaseController
 {
@@ -86,5 +88,36 @@ class IndexController extends BaseController
         $ip = $_SERVER['REMOTE_ADDR'];
         $position = Location::get($ip);
         dd($position);
+    }
+
+    public function es_create_user()
+    {
+        return view('user.create');
+    }
+
+    public function es_store_user(Request $request)
+    {
+        $data = $request->all();
+        $data['birth_date'] = strtotime($data['birth_date']);
+        $data['confirmation_token'] = User::generateToken();
+        $data['free_count'] = 1;
+        if (User::exists($data['email'])) {
+            $user = User::create($data);
+            if ($user) {
+                $data['confirmation_link'] = route('confirm.email', ['user' => $user->id, 'token' => $user->confirmation_token]);
+                Esputnik::createUserInES($user, "30-дневные подписчики");
+                Esputnik::sendEmail(2191643, $data);
+
+                Artisan::call('send-pdc:one', [
+                    'user' => $user->id
+                ]);
+
+                Payment::create([
+                    'user_id' => $user->id, 'sum' => 0, 'tariff' => 'free', 'status' => 'paid', 'actived_at' => Carbon::now()->addMonth()
+                ]);
+
+                return view('user.create', ['info' => 'Пользователь успешно зарегистрирован']);
+            }
+        }
     }
 }

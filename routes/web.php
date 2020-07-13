@@ -16,6 +16,8 @@ Route::post('/subscribe/user', 'IndexController@subscribe');
 Route::get('users/{user}/{token}/confirm', 'IndexController@confirm')->name('confirm.email');
 Route::get('/confirmation-email', 'IndexController@confirmation')->name('confirmation');
 Route::get('/my-ip', 'IndexController@my_ip');
+Route::get('/user/es/create', 'IndexController@es_create_user');
+Route::post('/user/es/store', 'IndexController@es_store_user')->name('es_store_user');
 
 # Subscription routes
 Route::group(['namespace' => 'Payment'], function(){

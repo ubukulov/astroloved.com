@@ -187,7 +187,7 @@ class Esputnik
         curl_close($ch);
     }
 
-    public function createUserInES($user)
+    public function createUserInES($user, $group_name = 'Трёхдневные')
     {
         $first_name = $user->name;
         $email = $user->email;	// email контакта
@@ -203,7 +203,7 @@ class Esputnik
         $request_entity->contacts = array($contact);
         $request_entity->dedupeOn = 'email';
         $request_entity->contactFields = array('firstName', 'email');
-        $request_entity->groupNames = array('Трёхдневные');
+        $request_entity->groupNames = array($group_name);
 
         $this->sendRequestES($url, $request_entity);
     }

@@ -354,6 +354,26 @@ section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f4 {
   background: url(../img/rw4.jpg) center center no-repeat;
   background-size: cover;
 }
+section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f5 {
+  background: url(../img/r5.jpg) center center no-repeat;
+  background-size: cover;
+}
+section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f6 {
+  background: url(../img/r6.jpg) center center no-repeat;
+  background-size: cover;
+}
+section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f7 {
+  background: url(../img/r7.jpg) center center no-repeat;
+  background-size: cover;
+}
+section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f8 {
+  background: url(../img/r8.jpg) center center no-repeat;
+  background-size: cover;
+}
+section#reviews .carousel .carousel-inner .carousel-item .wrap-items #f9 {
+  background: url(../img/r9.jpg) center center no-repeat;
+  background-size: cover;
+}
 section#reviews .carousel a.carousel-control-prev {
   margin-left: -23px;
 }
