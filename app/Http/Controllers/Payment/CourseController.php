@@ -37,6 +37,9 @@ class CourseController extends BaseController
         $data = $request->all();
         $email = $data['email'];
         $name = $data['name'];
+        $type = $data['type'];
+
+        $sum = ($type == 1) ? 8220 : 9310;
 
         $user = User::where(['email' => $email])->first();
         if ($user) {
@@ -57,12 +60,12 @@ class CourseController extends BaseController
         }
 
         $payment = Payment::create([
-            'user_id' => $user->id, 'sum' => 8220, 'tariff' => 'course'
+            'user_id' => $user->id, 'sum' => $sum, 'tariff' => 'course'
         ]);
 
         $request = [
             'pg_merchant_id'=> $this->merchant_id,
-            'pg_amount' => 8220,
+            'pg_amount' => $sum,
             'pg_salt' => $this->salt,
             'pg_order_id' => $payment->id,
             'pg_description' => 'Покупка курса',

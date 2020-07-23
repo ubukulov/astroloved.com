@@ -71,7 +71,7 @@
                 errors: [],
             },
             methods: {
-                buyCourse() {
+                buyCourse(type) {
                     this.errors = [];
 
                     if (!this.name) {
@@ -87,6 +87,7 @@
                     let form_data = new FormData();
                     form_data.append('name', this.name);
                     form_data.append('email', this.email);
+                    form_data.append('type', type);
 
                     if (this.errors.length == 0) {
                         axios.post('/buy-course', form_data)

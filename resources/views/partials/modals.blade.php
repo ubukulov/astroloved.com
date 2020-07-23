@@ -198,23 +198,81 @@
 
                 @endif
 
-                <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col-md-9 p-4 d-flex flex-column position-static">
-                        <h3 class="mb-0" style="text-transform: initial;">Курс №1. Определение психотипов личности по дате рождения человека</h3>
-                        <div class="mb-1 text-muted">20.04.2020</div>
-                        <p class="card-text mb-auto">В результате прохождения этого курсе, у Вас будут знания о расчёте психотипа личности по дате рождения человека. Это позволит Вам правильно понимать природу человека, его мотивы, причины поступков, грамотно выстраивать взаимоотношения.</p>
-                        <p class="card-text mb-auto">Это знание практично и полезно как бизнесмену, для более глубокого понимания своих сотрудников и партнёров, так и домохозяйке, для лучшего понимания своих детей и мужа.</p>
-                        <br><br>
-                        <strong style="font-size: 40px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong>
-                    </div>
-                    <div class="col-md-3 d-none d-lg-block" style="background: url(https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg) no-repeat; background-size: cover">
+                <style>
+                    .card {
+                        height: 450px;
+                        max-height: 100%;
+                        position: relative;
+                    }
+                    .card {
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        min-width: 0;
+                        /* word-wrap: break-word; */
+                        background-color: #fff;
+                        background-clip: border-box;
+                        border: 1px solid rgba(0, 0, 0, 0.125);
+                        border-radius: 0.25rem;
+                    }
+                </style>
 
+                <div class="row">
+
+                    <div class="col-sm-6">
+                        <div class="card mb-4 shadow-sm" style="height: auto;
+                        max-height: 100%;
+                        position: relative;">
+                            <div class="card_img">
+                                <img style="max-width: 100%; height: 250px;" src="https://ic.pics.livejournal.com/krambambyly/45254913/6573592/6573592_600.jpg" class="course_icon">
+                            </div>
+                            <div class="card-body">
+                                <h2 style="color: #000; font-size: 20px; text-transform: none;">Курс №1. Определение психотипов личности по дате рождения человека</h2>
+
+                                <br><br>
+
+                                <small class="text-muted">20.04.2020</small>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <button id="subscribe_btn" @click="buyCourse(1)" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card mb-4 shadow-sm" style="height: auto;
+                        max-height: 100%;
+                        position: relative;">
+                            <div class="card_img">
+                                <img style="max-width: 100%; height: 250px;" src="https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg" class="course_icon">
+                            </div>
+                            <div class="card-body">
+                                <h2 style="color: #000; font-size: 20px; text-transform: none;">Курс №2. Влияние планет на характер человека</h2>
+
+                                <br><br>
+
+                                <small class="text-muted">19.07.2020</small>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course2 !!}</strong>
+                                    </div>
+
+                                    <div class="col-md-9">
+                                        <button id="subscribe_btn" @click="buyCourse(2)" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-footer" style="justify-content: flex-start">
-                <button id="subscribe_btn" @click="buyCourse()" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
             </div>
         </div>
     </div>

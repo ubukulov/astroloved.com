@@ -93,6 +93,7 @@ class Esputnik
 '
         ];
 
+        /*
         if($user->id == 40) {
             if ($round == 1) {
                 return $new_values1[$list_item-1];
@@ -101,6 +102,12 @@ class Esputnik
             }
         } else {
             return $values[$list_item-1];
+        }*/
+
+        if ($round == 1) {
+            return $new_values1[$list_item-1];
+        } else {
+            return $new_values2[$list_item-1];
         }
     }
 
