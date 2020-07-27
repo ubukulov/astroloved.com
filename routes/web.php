@@ -18,7 +18,7 @@ Route::get('/confirmation-email', 'IndexController@confirmation')->name('confirm
 Route::get('/my-ip', 'IndexController@my_ip');
 Route::get('/user/es/create', 'IndexController@es_create_user');
 Route::post('/user/es/store', 'IndexController@es_store_user')->name('es_store_user');
-
+Route::post('/api/subscription-users', 'ApiController@subscription');
 # Subscription routes
 Route::group(['namespace' => 'Payment'], function(){
     Route::get('/buy-subscription', 'SubscriptionController@buy_subscription')->name('buy.subscription');

@@ -156,7 +156,7 @@
 <!-- educationModal -->
 <div class="modal fade" id="educationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered educationModal" role="document">
-        <div class="modal-content">
+        <div class="modal-content" style="">
             <div class="modal-header">
                 @if($agent->isMobile())
                     <h5 style="color: #1a1a1a; text-transform: uppercase;" class="modal-title" id="exampleModalLabel">Обучение на астролога</h5>
@@ -219,26 +219,19 @@
 
                 <div class="row">
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="card mb-4 shadow-sm" style="height: auto;
                         max-height: 100%;
                         position: relative;">
-                            <div class="card_img">
-                                <img style="max-width: 100%; height: 250px;" src="https://ic.pics.livejournal.com/krambambyly/45254913/6573592/6573592_600.jpg" class="course_icon">
+                            <div class="card_img" style="height: 200px;">
+                                <img style="max-width: 100%; width: 100%;height: 100%;" src="https://ic.pics.livejournal.com/krambambyly/45254913/6573592/6573592_600.jpg" class="course_icon">
                             </div>
                             <div class="card-body">
-                                <h2 style="color: #000; font-size: 20px; text-transform: none;">Курс №1. Определение психотипов личности по дате рождения человека</h2>
+                                <h2 style="color: #000; font-size: 16px; text-transform: none; height: 60px;">Курс №1. Определение психотипов личности по дате рождения человека</h2>
 
-                                <br><br>
-
-                                <small class="text-muted">20.04.2020</small>
-
+                                <p><strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong></p>
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course !!}</strong>
-                                    </div>
-
-                                    <div class="col-md-9">
+                                    <div class="col-md-12">
                                         <button id="subscribe_btn" @click="buyCourse(1)" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
                                     </div>
                                 </div>
@@ -246,27 +239,41 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="card mb-4 shadow-sm" style="height: auto;
                         max-height: 100%;
                         position: relative;">
-                            <div class="card_img">
-                                <img style="max-width: 100%; height: 250px;" src="https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg" class="course_icon">
+                            <div class="card_img" style="height: 200px;">
+                                <img style="max-width: 100%; height: 100%;" src="https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg" class="course_icon">
                             </div>
                             <div class="card-body">
-                                <h2 style="color: #000; font-size: 20px; text-transform: none;">Курс №2. Влияние планет на характер человека</h2>
+                                <h2 style="color: #000; font-size: 16px; text-transform: none; height: 60px;">Курс №2. Влияние планет на характер человека</h2>
 
-                                <br><br>
+                                <p><strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course2 !!}</strong></p>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <button id="subscribe_btn" @click="buyCourse(2)" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <small class="text-muted">19.07.2020</small>
+                    <div class="col-sm-4">
+                        <div class="card mb-4 shadow-sm" style="height: auto;
+                        max-height: 100%;
+                        position: relative;">
+                            <div class="card_img" style="height: 200px;">
+                                <img style="max-width: 100%;  width: 100%;height: 100%;" src="/img/combo_education2.jpg" class="course_icon">
+                            </div>
+                            <div class="card-body">
+                                <h2 style="color: #000; font-size: 16px; text-transform: none; height: 60px;">Комбо обучение со скидкой 25%</h2>
+
+                                <p><strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course3 !!}</strong></p>
 
                                 <div class="row">
-                                    <div class="col-md-3">
-                                        <strong style="font-size: 16px;" class="d-inline-block mb-2 text-success">{!! $price_course2 !!}</strong>
-                                    </div>
-
-                                    <div class="col-md-9">
-                                        <button id="subscribe_btn" @click="buyCourse(2)" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
+                                    <div class="col-md-12">
+                                        <button id="subscribe_btn" @click="buyCourse(3)" type="button" class="btn buy-cursov-gold rounded-pill po_btn">Приобрести сейчас</button>
                                     </div>
                                 </div>
                             </div>

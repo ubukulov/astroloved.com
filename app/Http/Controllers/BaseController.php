@@ -34,6 +34,7 @@ class BaseController extends Controller
                 $price_ak2 = "64 960 &#8376;";
                 $price_course = "8 220 &#8376;";
                 $price_course2 = "9 310 &#8376;";
+                $price_course3 = "13 100 &#8376;";
                 break;
 
             case "RU":
@@ -43,7 +44,8 @@ class BaseController extends Controller
                 $price_ak1 = "6 494 &#8381;";
                 $price_ak2 = "11 063 &#8381;";
                 $price_course = "1 399 &#8381;";
-                $price_course2 = "1 399 &#8381;";
+                $price_course2 = "1 590 &#8381;";
+                $price_course3 = "2 250 &#8381;";
                 break;
 
             case "UA":
@@ -53,7 +55,8 @@ class BaseController extends Controller
                 $price_ak1 = "2 512 &#8372;";
                 $price_ak2 = "4 273 &#8372;";
                 $price_course = "541 &#8372;";
-                $price_course2 = "541 &#8372;";
+                $price_course2 = "620 &#8372;";
+                $price_course3 = "870 &#8372;";
                 break;
 
             default:
@@ -64,6 +67,7 @@ class BaseController extends Controller
                 $price_ak2 = "64 960 &#8376;";
                 $price_course = "8 220 &#8376;";
                 $price_course2 = "9 310 &#8376;";
+                $price_course3 = "13 100 &#8376;";
                 break;
         }
         View::share('agent', $agent);
@@ -74,5 +78,6 @@ class BaseController extends Controller
         View::share('price_ak2', $price_ak2);
         View::share('price_course', $price_course);
         View::share('price_course2', $price_course2);
+        View::share('price_course3', $price_course3);
     }
 }
