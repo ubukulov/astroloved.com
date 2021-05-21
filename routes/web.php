@@ -18,7 +18,7 @@ Route::get('/confirmation-email', 'IndexController@confirmation')->name('confirm
 Route::get('/my-ip', 'IndexController@my_ip');
 Route::get('/user/es/create', 'IndexController@es_create_user');
 Route::post('/user/es/store', 'IndexController@es_store_user')->name('es_store_user');
-
+Route::post('/api/subscription-users', 'ApiController@subscription');
 # Subscription routes
 Route::group(['namespace' => 'Payment'], function(){
     Route::get('/buy-subscription', 'SubscriptionController@buy_subscription')->name('buy.subscription');
@@ -51,3 +51,4 @@ Route::group(['namespace' => 'Payment'], function(){
     Route::get('/robokassa/success/payment', 'RoboController@success_payment')->name('robo.success.payment');
     Route::get('/robokassa/fail/payment', 'RoboController@fail_payment')->name('robo.fail.payment');
 });
+Route::get('/user/send-pdc-one/{id}', 'IndexController@send_pdc_to_one');

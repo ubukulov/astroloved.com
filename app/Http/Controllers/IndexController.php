@@ -16,6 +16,8 @@ class IndexController extends BaseController
 {
     public function welcome()
     {
+		//$payments = Payment::where(['status' => 'paid'])->where('actived_at', '>=', Carbon::now())->get();
+		//dd($payments);
         return view('welcome');
     }
 
@@ -89,6 +91,16 @@ class IndexController extends BaseController
         $position = Location::get($ip);
         dd($position);
     }
+	
+	public function send_me_pdc($user_id)
+	{
+		$user = User::findOrFail($user_id);
+		Esputnik::createUserInES($user);
+		Artisan::call('send-pdc:one', [
+			'user' => $user_id
+		]);
+		echo "Ok";
+	}
 
     public function es_create_user()
     {
@@ -119,5 +131,14 @@ class IndexController extends BaseController
                 return view('user.create', ['info' => 'Пользователь успешно зарегистрирован']);
             }
         }
+    }
+	
+	public function send_pdc_to_one($user_id)
+    {
+        $user = User::findOrFail($user_id);
+        Esputnik::createUserInES($user);
+        Artisan::call('send-pdc:one', [
+            'user' => $user_id
+        ]);
     }
 }

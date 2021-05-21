@@ -71,16 +71,16 @@ class ConsultationController extends BaseController
 
         switch ($tariff){
             case 1:
-                $sum = 38212;
-                $pg_description = 'Покупка консультацию за 1 час';
+                $sum = 25000;
+                $pg_description = 'Покупка консультацию за 1,5 час';
                 break;
             case 2:
-                $sum = 64960;
-                $pg_description = 'Покупка консультацию за 2 час';
+                $sum = 50000;
+                $pg_description = 'Покупка консультацию за 3 час';
                 break;
             default:
-                $sum = 38212;
-                $pg_description = 'Покупка консультацию за 1 час';
+                $sum = 25000;
+                $pg_description = 'Покупка консультацию за 1,5 час';
                 break;
         }
 
@@ -179,10 +179,10 @@ class ConsultationController extends BaseController
             ]);
 
             switch ($payment->sum){
-                case 38212:
+                case 25000:
                     $route_name = 'consul.one';
                     break;
-                case 64960:
+                case 50000:
                     $route_name = 'consul.two';
                     break;
                 default:

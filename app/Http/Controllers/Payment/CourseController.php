@@ -39,7 +39,23 @@ class CourseController extends BaseController
         $name = $data['name'];
         $type = $data['type'];
 
-        $sum = ($type == 1) ? 8220 : 9310;
+        switch ($type) {
+            case 1:
+                $sum = 8220;
+                break;
+
+            case 2:
+                $sum = 9310;
+                break;
+
+            case 3:
+                $sum = 13100;
+                break;
+
+            default:
+                $sum = 8220;
+                break;
+        }
 
         $user = User::where(['email' => $email])->first();
         if ($user) {

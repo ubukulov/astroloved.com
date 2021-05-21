@@ -76,7 +76,7 @@
                 <div class="div-consul">
                     <div class="row">
                         <div class="col-md text-center">
-                            <img width="350px" src="/img/ppp.jpeg" alt="астроловед">
+                            <img width="350px" src="/img/ppp2.jpeg" alt="астроловед">
                         </div>
                         <div class="col-md">
                             <div class="opis-consult">
