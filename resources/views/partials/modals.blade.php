@@ -120,7 +120,7 @@
 
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
-                                <h4 class="my-0 font-weight-normal">Консультация за 1,5 час</h4>
+                                <h4 class="my-0 font-weight-normal">Консультация за 1 час</h4>
                             </div>
                             <div class="card-body">
                                 <h1 class="card-title pricing-card-title">{!! $price_ak1 !!}</h1>
@@ -134,7 +134,7 @@
                         </div>
                         <div class="card mb-4 shadow-sm">
                             <div class="card-header">
-                                <h4 class="my-0 font-weight-normal">Консультация за 3 часа</h4>
+                                <h4 class="my-0 font-weight-normal">Консультация за 2 часа</h4>
                             </div>
                             <div class="card-body">
                                 <h1 class="card-title pricing-card-title">{!! $price_ak2 !!}</h1>
@@ -156,7 +156,7 @@
 <!-- educationModal -->
 <div class="modal fade" id="educationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered educationModal" role="document">
-        <div class="modal-content" style="">
+        <div class="modal-content">
             <div class="modal-header">
                 @if($agent->isMobile())
                     <h5 style="color: #1a1a1a; text-transform: uppercase;" class="modal-title" id="exampleModalLabel">Обучение на астролога</h5>
@@ -224,7 +224,7 @@
                         max-height: 100%;
                         position: relative;">
                             <div class="card_img" style="height: 200px;">
-                                <img style="max-width: 100%; width: 100%;height: 100%;" src="/img/course1.jpeg" class="course_icon">
+                                <img style="max-width: 100%; width: 100%;height: 100%;" src="https://ic.pics.livejournal.com/krambambyly/45254913/6573592/6573592_600.jpg" class="course_icon">
                             </div>
                             <div class="card-body">
                                 <h2 style="color: #000; font-size: 16px; text-transform: none; height: 60px;">Курс №1. Определение психотипов личности по дате рождения человека</h2>
@@ -239,12 +239,12 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
+                    <div class="col-sm-6">
                         <div class="card mb-4 shadow-sm" style="height: auto;
                         max-height: 100%;
                         position: relative;">
                             <div class="card_img" style="height: 200px;">
-                                <img style="max-width: 100%; height: 100%;" src="/img/course2.jpeg" class="course_icon">
+                                <img style="max-width: 100%; height: 100%;" src="https://mamaplus.md/sites/default/files/mplus_migrate/1960/54214e77b7848_54214e77b7882.jpg" class="course_icon">
                             </div>
                             <div class="card-body">
                                 <h2 style="color: #000; font-size: 16px; text-transform: none; height: 60px;">Курс №2. Влияние планет на характер человека</h2>
@@ -264,7 +264,7 @@
                         max-height: 100%;
                         position: relative;">
                             <div class="card_img" style="height: 200px;">
-                                <img style="max-width: 100%;  width: 100%;height: 100%;" src="/img/course3.jpeg" class="course_icon">
+                                <img style="max-width: 100%;  width: 100%;height: 100%;" src="/img/combo_education2.jpg" class="course_icon">
                             </div>
                             <div class="card-body">
                                 <h2 style="color: #000; font-size: 16px; text-transform: none; height: 60px;">Комбо обучение со скидкой 25%</h2>
